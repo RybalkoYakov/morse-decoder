@@ -35,7 +35,6 @@ const MORSE_TABLE = {
     '---..':  '8',
     '----.':  '9',
     '-----':  '0',
-    ' ': ' '
 };
 
 function decode(expr) {
@@ -60,6 +59,9 @@ function decode(expr) {
     }
 
     letters.forEach(value =>{
+        if  (value === ' ') {
+            lettersDecoded.push(value)
+        }
           Object.keys(MORSE_TABLE).forEach(key => {
               if (key === value) {
                   lettersDecoded.push(MORSE_TABLE[value])
